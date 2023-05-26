@@ -1,7 +1,9 @@
-import React from 'react'
-
+import React, { useContext } from 'react'
+import EditButton from './EditButton';
+import Context from '../ContextProvider/Context';
 const CardData = ({data}) => {
-    const {
+    const { deleteFunc}=useContext(Context)
+    const {_id,
         fname,
         lname,
         age,
@@ -12,10 +14,11 @@ const CardData = ({data}) => {
         duration,
         date,
       } = data;
+    //   console.log(_id)
   return (
     <div className="card mb-4 shadow font-monospace" id="myCard">
     <div className="card-body">
-      {/* <h4><span className="text-danger fw-bold">id </span>: {id}</h4> */}
+      {/* <h4><span className="text-danger fw-bold">id </span>: {_id}</h4> */}
       <h4 className="card-title"><span className="text-danger fw-bold">Acivity type</span> : {activityType}</h4>
       <hr />
       <div className="card-text">
@@ -66,14 +69,14 @@ const CardData = ({data}) => {
     </div>
     <div className="d-flex gap-4 justify-content-start mb-4 mx-4">
       {/* <button className="btn btn-primary text-light" style={{width:"50%"}}>Edit</button> */}
-      {/* <EditButton data={data}/> */}
-      {/* <button
+      <EditButton data={data}/>
+      <button
         className="btn btn-danger"
         style={{ width: "100%" }}
-        onClick={() => deleteFunc(id)}
+        onClick={() => deleteFunc(_id)}
       >
         Delete
-      </button> */}
+      </button>
     </div>
   </div>
   )
