@@ -1,6 +1,9 @@
 import React from 'react'
 import { useContext,Fragment } from 'react'
+import CardData from './CardData'
 import Context from '../ContextProvider/Context'
+
+
 const CardList = () => {
 const {word,allData}=useContext(Context)
 // console.log(allData)
