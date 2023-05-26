@@ -68,14 +68,13 @@ const ContextProvider = ({ children }) => {
       ...newData,
       activityType: select,
     };
-    // setAllData([...allData, newDataWithId]);
+    setAllData([...allData, newDataSelect]);
 
     //@Posting data
     axios.post("http://localhost:5000/api/todos/",newDataSelect)
     .then((res)=>{
         console.log(res)
     })
-    PostActivity(newDataSelect)
     setNewData({
       fname: " ",
       lname: " ",
@@ -125,24 +124,26 @@ const handleEditFormChange=(e)=>{
    // 3) onSubmit handler for the editForm
 const handleEditFormSubmit=(e)=>{
     e.preventDefault()
-    // const editedFormValue={
-    //   fname: newEditData.fname,
-    //   lname: newEditData.lname,
-    //   email: newEditData.email,
-    //   contact: newEditData.contact,
-    //   age: newEditData.age,
-    //   activityType: newEditData.activityType,
-    //   description: newEditData.description,
-    //   duration: newEditData.duration,
-    //   date: newEditData.date,
-    // }
-    // console.log(editedFormValue)
+    const editedFormValue={
+      _id:newEditData._id,
+      fname: newEditData.fname,
+      lname: newEditData.lname,
+      email: newEditData.email,
+      contact: newEditData.contact,
+      age: newEditData.age,
+      activityType: newEditData.activityType,
+      description: newEditData.description,
+      duration: newEditData.duration,
+      date: newEditData.date,
+    }
+    console.log(editedFormValue)
 
-    // const newValues=[...allData]
-    // const index=allData.findIndex((value)=>value.id===newEditData.id)
-    // newValues[index]=editedFormValue;
-    // setAllData(newValues)
-    axios.put(`http://localhost:5000/api/todos/${newEditData._id}`,newEditData)
+    const newValues=[...allData]
+    const index=allData.findIndex((value)=>value._id===newEditData._id)
+    newValues[index]=editedFormValue;
+    setAllData(newValues)
+
+    axios.put(`http://localhost:5000/api/todos/${editedFormValue._id}`,newEditData)
     .then((res)=>{
         console.log(res)
     })
@@ -150,12 +151,11 @@ const handleEditFormSubmit=(e)=>{
     //******deleting card from the form************//
   const deleteFunc = (id) => {
     // console.log(id)
+    setAllData((prevUsers) => prevUsers.filter((user) => user._id !== id));
     axios.delete(`http://localhost:5000/api/todos/${id}`)
     .then((res)=>{
         console.log(res)
     })
-    // setAllData((prevUsers) => prevUsers.filter((user) => user.id !== id));
-
   };
   return (
     <>

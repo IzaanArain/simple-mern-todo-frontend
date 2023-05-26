@@ -1,6 +1,8 @@
 import CardList from "./componets/CardList"
 import Context from "./ContextProvider/Context"
 import { useContext,useState } from "react"
+import NavBar from "./componets/NavBar";
+import Footer from "./componets/Footer";
 function App() {
   const [ShowTable, setShowTable] = useState(false);
   const [ShowCard, setShowCard] = useState(false);
@@ -14,11 +16,12 @@ const handleShowCard = () => {
 };
   return (
     <>
-    <div className="container">
+    <NavBar/>
+    <div className="container-fluid">
     <div className="row">
           <div className="col-lg">
-            <div className="card m-4">
-              <div className="card-body">
+           
+              {/* <div>
                 <button
                   className="btn btn-primary fs-4 mb-2"
                   onClick={() => handleShowCard()}
@@ -26,11 +29,13 @@ const handleShowCard = () => {
                   see cards
                 </button> 
                  {ShowCard ? <CardList/> : null}
-              </div>
-            </div>
+                 
+              </div> */}
+           <CardList/>
           </div>
         </div>
     </div>
+    <Footer/>
     </>
   )
 }

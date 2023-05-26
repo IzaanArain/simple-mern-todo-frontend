@@ -69,6 +69,8 @@ function EditForm(props) {
                   autoComplete="off"
                   value={newEditData.age}
                   onChange={handleEditFormChange}
+                  min="18" 
+                  max="60"
                 />
               </Form.Group>
             </div>
@@ -99,6 +101,9 @@ function EditForm(props) {
                   autoComplete="off"
                   value={newEditData.date}
                   onChange={handleEditFormChange}
+                  required
+                  min="2023-01-02"
+                  max="2023-07-02"
                 />
               </Form.Group>
             </div>
@@ -106,7 +111,7 @@ function EditForm(props) {
               <Form.Group className="mb-3 fs-4">
                 <Form.Label htmlFor="duration">duration :</Form.Label>
                 <Form.Control
-                  type="number"
+                  type="text"
                   placeholder="Enter Duration"
                   name="duration"
                   id="duration"
@@ -123,8 +128,9 @@ function EditForm(props) {
               <Form.Group className="mb-3 fs-4">
                 <Form.Label htmlFor="contact">Contact :</Form.Label>
                 <Form.Control
-                  type="number"
-                  placeholder="Enter your Contact"
+                  type="tel"
+                  pattern="03[0-9]{2}-(?!1234567)(?!1111111)(?!7654321)[0-9]{7}"
+                  placeholder="03XX-XXXXXXX"
                   name="contact"
                   id="contact"
                   autoComplete="off"
@@ -167,6 +173,7 @@ function EditForm(props) {
                   id="description"
                   value={newEditData.description}
                   onChange={handleEditFormChange}
+                  maxlength="100"
                 />
               </Form.Group>
             </div>

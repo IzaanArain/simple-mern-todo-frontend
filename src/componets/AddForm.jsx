@@ -43,6 +43,7 @@ function AddForm() {
                   id="lname"
                   value={newData.lname}
                   onChange={handleFormChange}
+                  required
                 />
               </Form.Group>
             </div>
@@ -60,6 +61,9 @@ function AddForm() {
                   autoComplete="off"
                   value={newData.age}
                   onChange={handleFormChange}
+                  min="18" 
+                  max="60"
+                  required
                 />
               </Form.Group>
             </div>
@@ -73,6 +77,7 @@ function AddForm() {
                   id="email"
                   value={newData.email}
                   onChange={handleFormChange}
+                  required
                 />
               </Form.Group>
             </div>
@@ -90,6 +95,8 @@ function AddForm() {
                   autoComplete="off"
                   value={newData.date}
                   onChange={handleFormChange}
+                  min="2023-01-02"
+                  max="2023-07-02"
                 />
               </Form.Group>
             </div>
@@ -97,13 +104,14 @@ function AddForm() {
               <Form.Group className="mb-3 fs-4">
                 <Form.Label htmlFor="duration">duration :</Form.Label>
                 <Form.Control
-                  type="number"
+                  type="text"
                   placeholder="Enter Duration"
                   name="duration"
                   id="duration"
                   autoComplete="off"
                   value={newData.duration}
                   onChange={handleFormChange}
+                  required
                 />
               </Form.Group>
             </div>
@@ -114,8 +122,9 @@ function AddForm() {
               <Form.Group className="mb-3 fs-4">
                 <Form.Label htmlFor="contact">Contact :</Form.Label>
                 <Form.Control
-                  type="number"
-                  placeholder="Enter your Contact"
+                  type="tel"
+                  pattern="03[0-9]{2}-(?!1234567)(?!1111111)(?!7654321)[0-9]{7}"
+                  placeholder="03XX-XXXXXXX"
                   name="contact"
                   id="contact"
                   autoComplete="off"
@@ -136,7 +145,7 @@ function AddForm() {
                   onChange={handleSelectChange}
                   required
                 >
-                  <option disabled hidden>
+                  <option disabled>
                     Open this select menu
                   </option>
                   <option value="Bicycles">Bicycle</option>
@@ -160,6 +169,7 @@ function AddForm() {
                   id="description"
                   value={newData.description}
                   onChange={handleFormChange}
+                  maxlength="100"
                 />
               </Form.Group>
             </div>

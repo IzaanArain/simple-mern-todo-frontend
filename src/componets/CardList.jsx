@@ -11,8 +11,8 @@ const {word,allData}=useContext(Context)
     <>
     {/* <h1>Card List</h1> */}
     {/* <h1>{word}</h1> */}
-    <div className="row">
-        <div className="col">
+    <div className="row d-flex justify-content-center mt-5">
+        <div className="col-lg-6">
         <AddForm/>
         </div>
       </div>
