@@ -9,19 +9,29 @@ const {word,allData}=useContext(Context)
 // console.log(allData)
   return (
     <>
-    <h1>Card List</h1>
-    <h1>{word}</h1>
-    {
-    allData.map((value)=>{
+    {/* <h1>Card List</h1> */}
+    {/* <h1>{word}</h1> */}
+    <div className="row">
+        <div className="col">
+        add form here
+        </div>
+      </div>
+   <div className="row">
+    <div className="col">
+        <div id="card_list">
+        {allData.map((value)=>{
         return(
             <>
             <Fragment key={value.id}>
-            <h1>{value.fname} {value.lname}</h1>
+                <CardData data={value}/>
+            {/* <h1>{value.fname} {value.lname}</h1> */}
             </Fragment>
             </>
-        )
-    })
-    }
+        );
+    })};
+        </div>
+    </div>
+   </div>
     </>
   )
 }
