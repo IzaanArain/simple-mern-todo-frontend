@@ -5,12 +5,16 @@ import axios from 'axios'
 
 const ContextProvider = ({children}) => {
     const [word,setWord]=useState("hello world")
-    const [allData,setAllData]=useState(data)
+    const [allData,setAllData]=useState([])
 
-    // useEffect(()=>{
-    //     axios.get("http://localhost:5000/api/todos/")
-    //     .then(res=>setAllData(res.data))
-    // },[])
+    useEffect(()=>{
+        axios.get("http://localhost:5000/api/todos")
+        .then((res)=>{
+            // console.log(res.data)
+            setAllData(res.data)
+        })
+    },[])
+    // console.log(allData[1])
   return (
     <>
     <Context.Provider value={{word,allData}}>

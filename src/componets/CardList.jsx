@@ -1,9 +1,9 @@
 import React from 'react'
-import { useContext } from 'react'
+import { useContext,Fragment } from 'react'
 import Context from '../ContextProvider/Context'
 const CardList = () => {
 const {word,allData}=useContext(Context)
-console.log(allData)
+// console.log(allData)
   return (
     <>
     <h1>Card List</h1>
@@ -12,7 +12,9 @@ console.log(allData)
     allData.map((value)=>{
         return(
             <>
-            <h1>{value.fname}</h1>
+            <Fragment key={value.id}>
+            <h1>{value.fname} {value.lname}</h1>
+            </Fragment>
             </>
         )
     })
