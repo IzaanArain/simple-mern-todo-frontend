@@ -2,7 +2,6 @@ import React from 'react'
 
 const CardData = ({data}) => {
     const {
-        id,
         fname,
         lname,
         age,
@@ -16,9 +15,9 @@ const CardData = ({data}) => {
   return (
     <div className="card mb-4 shadow font-monospace" id="myCard">
     <div className="card-body">
-      <h4><span className="text-danger fw-bold">id </span>: {id}</h4>
-      <hr />
+      {/* <h4><span className="text-danger fw-bold">id </span>: {id}</h4> */}
       <h4 className="card-title"><span className="text-danger fw-bold">Acivity type</span> : {activityType}</h4>
+      <hr />
       <div className="card-text">
         <div className="row">
 

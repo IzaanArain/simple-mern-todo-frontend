@@ -13,3 +13,16 @@
     background-color:azure;
     cursor: pointer;
  }
+
+
+ @media screen and (max-width:1000px){
+    #card_list{
+       flex-direction: column;
+    }
+    #myCard{
+       width: 100%;
+    }
+    /* table{
+       display: none;
+    } */
+ }

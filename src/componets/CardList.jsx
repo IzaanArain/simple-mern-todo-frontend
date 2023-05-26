@@ -2,7 +2,7 @@ import React from 'react'
 import { useContext,Fragment } from 'react'
 import CardData from './CardData'
 import Context from '../ContextProvider/Context'
-
+import AddForm from './AddForm'
 
 const CardList = () => {
 const {word,allData}=useContext(Context)
@@ -13,7 +13,7 @@ const {word,allData}=useContext(Context)
     {/* <h1>{word}</h1> */}
     <div className="row">
         <div className="col">
-        add form here
+        <AddForm/>
         </div>
       </div>
    <div className="row">

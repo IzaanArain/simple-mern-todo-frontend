@@ -1,9 +1,17 @@
 import CardList from "./componets/CardList"
 import Context from "./ContextProvider/Context"
-import { useContext } from "react"
+import { useContext,useState } from "react"
 function App() {
-const {ShowCard,handleShowCard}=useContext(Context)
+  const [ShowTable, setShowTable] = useState(false);
+  const [ShowCard, setShowCard] = useState(false);
+//******Showing hiding table or cards************//
 
+const handleShowTable = () => {
+  setShowTable(!ShowTable);
+};
+const handleShowCard = () => {
+  setShowCard(!ShowCard);
+};
   return (
     <>
     <div className="container">
