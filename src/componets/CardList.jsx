@@ -21,12 +21,12 @@ const {word,allData}=useContext(Context)
         <div id="card_list">
         {allData.map((value)=>{
         return(
-            <>
-            <Fragment key={value.id}>
+           
+            <Fragment key={value._id}>
                 <CardData data={value}/>
             {/* <h1>{value.fname} {value.lname}</h1> */}
             </Fragment>
-            </>
+          
         );
     })};
         </div>

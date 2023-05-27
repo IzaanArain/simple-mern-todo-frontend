@@ -169,7 +169,7 @@ function AddForm() {
                   id="description"
                   value={newData.description}
                   onChange={handleFormChange}
-                  maxlength="100"
+                  maxLength="100"
                 />
               </Form.Group>
             </div>

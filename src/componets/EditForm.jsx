@@ -173,7 +173,7 @@ function EditForm(props) {
                   id="description"
                   value={newEditData.description}
                   onChange={handleEditFormChange}
-                  maxlength="100"
+                  maxLength="100"
                 />
               </Form.Group>
             </div>
